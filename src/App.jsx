@@ -4,10 +4,9 @@ import Hero from "./components/Hero"
 import Hightlights from "./components/Hightlights"
 import Model from "./components/Model"
 import Navbar from "./components/Navbar"
+import Features from "./components/Features";
 
 const App =() => {
-
-  // return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
   
   return (
     <main className="bg-black">
@@ -15,6 +14,7 @@ const App =() => {
       <Hero/>
       <Hightlights/>
       <Model/>
+      <Features/>
     </main>
   )
 }
