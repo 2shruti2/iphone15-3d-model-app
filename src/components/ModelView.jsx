@@ -1,5 +1,5 @@
 import { OrbitControls, PerspectiveCamera, View } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import * as THREE from "three";
 import Loader from "./Loader";
 
@@ -15,6 +15,12 @@ const ModelView = ({
   size,
   item,
 }) => {
+  const [autoRotate, setAutoRotate] = useState(true);
+
+  const handleTouch = () => {
+    setAutoRotate(false);
+  };
+
   return (
     <View
       index={index}
@@ -30,6 +36,9 @@ const ModelView = ({
 
       <OrbitControls
         makeDefault
+        autoRotate={autoRotate}
+        onStart={handleTouch}
+        autoRotateSpeed={3}
         ref={controlRef}
         enableZoom={false}
         enablePan={false}
