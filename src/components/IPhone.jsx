@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react'
-import { useGLTF, useTexture } from '@react-three/drei'
+import { useEffect } from "react";
+import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
 function Model(props) {
-  const { nodes, materials } = useGLTF('/models/scene.glb')
+  const { nodes, materials } = useGLTF("/models/scene.glb");
 
   const texture = useTexture(props.item.img);
 
@@ -137,8 +137,8 @@ function Model(props) {
         material={materials.pIJKfZsazmcpEiU}
         scale={0.01}
       >
-        <meshStandardMaterial roughness={1} map={texture}/>
-        </mesh>
+        <meshStandardMaterial roughness={1} map={texture} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -245,8 +245,8 @@ function Model(props) {
         scale={0.01}
       />
     </group>
-  )
+  );
 }
 export default Model;
 
-useGLTF.preload('/models/scene.glb')
+useGLTF.preload("/models/scene.glb");

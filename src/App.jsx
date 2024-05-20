@@ -5,6 +5,8 @@ import Hightlights from "./components/Hightlights"
 import Model from "./components/Model"
 import Navbar from "./components/Navbar"
 import Features from "./components/Features";
+import HowItWorks from "./components/HowItWorks";
+import Footer from "./components/Footer";
 
 const App =() => {
   
@@ -15,6 +17,8 @@ const App =() => {
       <Hightlights/>
       <Model/>
       <Features/>
+      <HowItWorks/>
+      <Footer/>
     </main>
   )
 }

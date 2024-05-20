@@ -33,20 +33,20 @@ const Model = () => {
   const tl = gsap.timeline();
 
   useEffect(() => {
-    if(size === 'large') {
-      animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
-        transform: 'translateX(-100%)',
-        duration: 2
-      })
+    if (size === "large") {
+      animateWithGsapTimeline(tl, small, smallRotation, "#view1", "#view2", {
+        transform: "translateX(-100%)",
+        duration: 2,
+      });
     }
 
-    if(size ==='small') {
-      animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
-        transform: 'translateX(0)',
-        duration: 2
-      })
+    if (size === "small") {
+      animateWithGsapTimeline(tl, large, largeRotation, "#view2", "#view1", {
+        transform: "translateX(0)",
+        duration: 2,
+      });
     }
-  }, [size])
+  }, [size]);
 
   useGSAP(() => {
     gsap.to("#heading", {
@@ -73,7 +73,7 @@ const Model = () => {
               item={model}
               size={size}
             />
-            <ModelView 
+            <ModelView
               index={2}
               groupRef={large}
               gsapType="view2"
@@ -86,14 +86,14 @@ const Model = () => {
             <Canvas
               className="w-full h-full"
               style={{
-                position: 'fixed',
+                position: "fixed",
                 top: 0,
                 bottom: 0,
                 left: 0,
                 right: 0,
-                overflow: 'hidden'
+                overflow: "hidden",
               }}
-              eventSource={document.getElementById('root')}
+              eventSource={document.getElementById("root")}
             >
               <View.Port />
             </Canvas>
@@ -105,20 +105,32 @@ const Model = () => {
             <div className="flex-center">
               <ul className="color-container">
                 {models.map((item, i) => (
-                  <li key={i} className="w-6 h-6 rounded-full mx-2 cursor-pointer" style={{ backgroundColor: item.color[0] }} onClick={() => setModel(item)} />
+                  <li
+                    key={i}
+                    className="w-6 h-6 rounded-full mx-2 cursor-pointer"
+                    style={{ backgroundColor: item.color[0] }}
+                    onClick={() => setModel(item)}
+                  />
                 ))}
               </ul>
 
               <button className="size-btn-container">
                 {sizes.map(({ label, value }) => (
-                  <span key={label} className="size-btn" style={{ backgroundColor: size === value ? 'white' : 'transparent', color: size === value ? 'black' : 'white'}} onClick={() => setSize(value)}>
+                  <span
+                    key={label}
+                    className="size-btn"
+                    style={{
+                      backgroundColor: size === value ? "white" : "transparent",
+                      color: size === value ? "black" : "white",
+                    }}
+                    onClick={() => setSize(value)}
+                  >
                     {label}
                   </span>
                 ))}
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
