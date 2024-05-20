@@ -6,4 +6,4 @@
 - tailwind
 - gsap
 - three js
-- sentry integration for performance monitoring and error tracking
+- sentry integration for performance monitoring and error tracking (api's get blocked while using an adblocking environment like brave browser's default settings)
